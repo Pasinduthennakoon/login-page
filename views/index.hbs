@@ -1,12 +1,80 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In page</title>
+
     <link rel="stylesheet" href="/style.css">
-    <title>Document</title>
+
+    <!--for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+     <!--restrict back button
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()",0);
+        window.onunload = function () { null };
+    </script>
+    -->
+    
+
 </head>
+
 <body>
-    <h1>homepage</h1>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>Code<span>X</span>.</p>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#" class="link">Home</a></li>
+                    <li><a href="#" class="link">Service</a></li>
+                    <li><a href="#" class="link">About</a></li>
+                    <li><a href="#" class="link">Premium</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn">Sign In</button>
+                <a href="/register"><button class="btn" id="registerBtn">Sign Up</button></a>
+            </div>
+            <div class="new-menu-btn">
+
+            </div>
+
+        </nav>
+
+        <div class="form-box log">
+            <div class="form-container">
+                <form action="/" method="post">
+                    <h3>login now</h3>
+
+                    
+
+                    <div class="input-box">
+                        <input type="email" name="email" required placeholder="enter your email" class="input-field">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" name="password" required placeholder="enter your password"
+                            class="input-field" id="password-input">
+                            <i class="fa-solid fa-eye show-password lpass"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="submit" name="submit"  class="form-btn" value="login now" />
+                    </div>
+
+
+                    <p><span>don't have an account? <a href="/register">register now</a></span></p>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
