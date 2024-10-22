@@ -7,10 +7,12 @@
     <title>Sign Up page</title>
 
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/validate.css">
 
     <!--for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -40,7 +42,11 @@
                 <form action="/auth/register" method="post">
                     <h3>register now</h3>
 
-                
+                    <div class="error-msg">
+                    {{#if message}}
+                        {{message}}
+                    {{/if}}
+                    </div>
 
                     <div class="input-box">
                         <input type="text" name="name" required placeholder="enter your name" class="input-field">
@@ -56,7 +62,17 @@
 
                             <i class="fa-solid fa-eye show-password pass"></i>
 
-                            
+                            <div class="password-checklist">
+                                <h5 class="checklist-title">password should be</h3> 
+
+                                <ul class="checklist">
+                                    <li class="list-item">At least 8 character long</li>
+                                    <li class="list-item">At least 1 number</li>
+                                    <li class="list-item">At least 1 lowerletter</li>
+                                    <li class="list-item">At least 1 upperletter</li>
+                                    <li class="list-item">At least 1 special character</li>
+                                </ul>
+                            </div>
                     </div>
 
                     <div class="input-box">
@@ -82,6 +98,7 @@
             </div>
         </div>
     </div>
+    <script src="/js/validate.js"></script>
 
 </body>
 

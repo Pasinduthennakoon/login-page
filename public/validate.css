@@ -1,0 +1,74 @@
+.pass{
+    position: absolute;
+    right: 60px;
+    top: 333px;
+    color: #ff6d00;
+}
+
+.cpass{
+    position: absolute;
+    right: 60px;
+    top: 393px;
+    color: #ff6d00;
+}
+
+.lpass{
+    position: absolute;
+    right: 60px;
+    top: 262px;
+    color: #ff6d00;
+}
+
+.password-checklist{
+    position: absolute;
+    width: 60%;
+    background: rgba(255, 109, 0, 0.7);
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: .5s ease;
+    
+}
+
+.password-input:focus ~ .password-checklist{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.checklist-title{
+    font-size: 15px;
+    color: #6b3105;
+    padding-left: 10px;
+}
+
+.checklist{
+    padding-left: 30px;
+    padding-bottom: 10px;
+    list-style: none;
+}
+
+.list-item{
+    padding-left: 30px;
+    color: white;
+    font-size: 14px;
+}
+
+.list-item::before{
+    content: '\f00d';
+    font-family: FontAwesome;
+    display: inline-block;
+    margin: 8px 0;
+    margin-left: -30px;
+    width: 20px;
+    font-size: 12px;
+}
+
+.list-item.checked{
+    opacity: 0.5;
+}
+
+.list-item.checked::before{
+    content: '\f00c';
+    color: #6b3105;
+}
