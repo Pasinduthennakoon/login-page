@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up page</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <!--for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CodeX.</p>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#" class="link">Home</a></li>
+                    <li><a href="#" class="link">Service</a></li>
+                    <li><a href="#" class="link">About</a></li>
+                    <li><a href="#" class="link">Premium</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <a href="/"><button class="btn " id="loginBtn">Sign In</button></a>
+                <button class="btn white-btn" id="registerBtn">Sign Up</button>
+            </div>
+            <div class="new-menu-btn">
+
+            </div>
+        </nav>
+        <div class="form-box">
+            <div class="form-container">
+                <form action="/auth/register" method="post">
+                    <h3>register now</h3>
+
+                
+
+                    <div class="input-box">
+                        <input type="text" name="name" required placeholder="enter your name" class="input-field">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="email" name="email" required placeholder="enter your email" class="input-field">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" name="password" required placeholder="enter your password"
+                            class="input-field password-input" id="password-input">
+
+                            <i class="fa-solid fa-eye show-password pass"></i>
+
+                            
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" name="cpassword" required placeholder="confirm your password"
+                            class="input-field password-input" id="cPassword-input">
+                            <i class="fa-solid fa-eye show-password cpass"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <select name="user_type" class="input-field">
+                            <option value="user">user</option>
+                            <option value="admin">admin</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="submit" name="submit" value="register now" class="form-btn">
+                    </div>
+
+
+                    <p><span>already have an account? <a href="/">login now</a></span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
