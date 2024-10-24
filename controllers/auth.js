@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
+var checkIsValidpass = false;
 
 const db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -19,6 +20,19 @@ exports.register = (req, res) =>{
     const passwordconfirm = req.body.cpassword;
     const type = req.body.user_type;
 
+    //check the is password strong?
+    var InputValue = password;
+        var regex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        console.log(InputValue);
+         
+         if(!regex.test(InputValue)) {
+              console.log("incorrect pw");
+              checkIsValidpass = false;    
+         }else{
+            console.log("correct pw");
+            checkIsValidpass = true;
+         }
+    //end
     
     db.query('SELECT email FROM users WHERE email = ?', [email], async (error, results) => {
         if(error){
@@ -35,6 +49,7 @@ exports.register = (req, res) =>{
             });
         }
         
+        if(checkIsValidpass == true){// is password  strong?
             //encrypt passwords
             let hashedpassword = await bcrypt.hash(password, 8);
             //console.log(hashedpassword);
@@ -49,11 +64,11 @@ exports.register = (req, res) =>{
                     });
                 }
             })
-            
+        }else{
+            return res.render('register', {
+                message: 'password not strong'
+            })
+        }    
     });
 
 }
-
-
-
-
